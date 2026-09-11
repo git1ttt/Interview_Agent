@@ -1,0 +1,82 @@
+[
+  {
+    "id": "HR001",
+    "role": "All",
+    "category": "hr",
+    "difficulty": "beginner",
+    "question": "Tell me about yourself.",
+    "model_answer": "Use the Present-Past-Future framework. Present: current role and key responsibilities. Past: relevant background that led here (1-2 highlights). Future: what you're looking for and why this role fits. Keep it under 2 minutes. Tailor to the job description. End with a bridge to the role: 'which is exactly why I'm excited about this opportunity.'",
+    "key_points": ["Present-Past-Future", "under 2 minutes", "tailor to job description", "bridge to role"],
+    "improvement_tip": "Practice out loud — this is always the first question. A polished opener sets a confident tone."
+  },
+  {
+    "id": "HR002",
+    "role": "All",
+    "category": "hr",
+    "difficulty": "beginner",
+    "question": "What are your greatest strengths?",
+    "model_answer": "Pick 2-3 strengths directly relevant to the role. For each: name the strength, give a brief behavioral example (CAR: Context, Action, Result), and connect it to the role. Example: 'I'm a strong communicator — when my team had conflicting priorities during a sprint, I facilitated a discussion that aligned everyone, and we delivered on time. That skill will be valuable here where cross-team collaboration is central.'",
+    "key_points": ["role-relevant strengths", "CAR example", "connect to role", "avoid generic answers"],
+    "improvement_tip": "Never say 'I'm a hard worker' — too cliché. Choose distinctive strengths with evidence."
+  },
+  {
+    "id": "HR003",
+    "role": "All",
+    "category": "hr",
+    "difficulty": "intermediate",
+    "question": "What is your greatest weakness?",
+    "model_answer": "Use the 'genuine weakness + growth' formula. Avoid fake weaknesses ('I work too hard'). Genuine but manageable: 'Early in my career I struggled with delegating — I'd take on too much myself. I've actively worked on this by clearly defining ownership in projects and doing regular check-ins. My last team consistently rated delegation as a strength in retrospectives.'",
+    "key_points": ["genuine weakness", "growth story", "avoid fake weaknesses", "measurable improvement"],
+    "improvement_tip": "Pick a weakness that is real but not a core requirement of the target role."
+  },
+  {
+    "id": "HR004",
+    "role": "All",
+    "category": "behavioral",
+    "difficulty": "intermediate",
+    "question": "Describe a time you had a conflict with a coworker. How did you handle it?",
+    "model_answer": "STAR: Situation — disagreement with a peer on architecture choice (microservices vs monolith). Task — resolve without escalating. Action — scheduled a 1:1, listened to their reasoning, shared mine with data (deployment complexity metrics), proposed a pilot, agreed on a time-boxed experiment. Result — monolith approach adopted for MVP, relationship strengthened, peer thanked me for the structured discussion. Lesson: data-driven discussions beat opinion wars.",
+    "key_points": ["1:1 resolution", "active listening", "data-driven", "positive outcome", "STAR"],
+    "improvement_tip": "Always show that you approached the conflict with curiosity, not defensiveness."
+  },
+  {
+    "id": "HR005",
+    "role": "All",
+    "category": "behavioral",
+    "difficulty": "intermediate",
+    "question": "Tell me about a time you failed. What did you learn?",
+    "model_answer": "STAR: Situation — led a feature release without adequate load testing. Task — ensure smooth production deploy. Action — deployed without testing under realistic traffic, caused a 2-hour outage. Result — impacted 5,000 users, SLA breached. Lesson — introduced mandatory load testing in CI pipeline, created a pre-deploy checklist, shared the incident post-mortem with the team. Outcome: zero similar incidents in 18 months since.",
+    "key_points": ["owns the failure", "specific impact", "concrete lessons", "systemic fix", "STAR"],
+    "improvement_tip": "Interviewers want to see accountability and learning, not blame-shifting."
+  },
+  {
+    "id": "HR006",
+    "role": "All",
+    "category": "hr",
+    "difficulty": "beginner",
+    "question": "Where do you see yourself in 5 years?",
+    "model_answer": "Show ambition aligned with the company's growth path. Structure: (1) short-term — master the role and contribute meaningfully within the first year; (2) medium-term — grow into a tech lead or senior specialist; (3) long-term — mention areas of interest (AI, architecture, management) that align with the company's direction. Avoid 'I want your job' or 'I have no idea'.",
+    "key_points": ["aligned ambition", "short/medium/long term", "company direction", "specific growth areas"],
+    "improvement_tip": "Research the company's growth areas so your 5-year vision naturally aligns with their roadmap."
+  },
+  {
+    "id": "HR007",
+    "role": "All",
+    "category": "behavioral",
+    "difficulty": "advanced",
+    "question": "Describe a situation where you had to influence without authority.",
+    "model_answer": "STAR: Situation — identified that the team's manual deployment process was causing 40% of bugs. Task — convince the team to adopt CI/CD without managerial authority. Action — built a working GitHub Actions proof-of-concept in a weekend, presented time-savings data (3h/week saved per dev), ran a lunch-and-learn, addressed concerns individually. Result — team adopted CI/CD within 2 sprints, deployment errors dropped 60%. Lesson: demonstrate value, don't just advocate for it.",
+    "key_points": ["proof of value", "data-driven persuasion", "individual buy-in", "STAR"],
+    "improvement_tip": "Show empathy for others' concerns — that's what makes influence sustainable."
+  },
+  {
+    "id": "HR008",
+    "role": "All",
+    "category": "hr",
+    "difficulty": "beginner",
+    "question": "Do you have any questions for us?",
+    "model_answer": "Always have 3-4 thoughtful questions ready. Best categories: (1) Role clarity — 'What does success look like in the first 90 days?'; (2) Team culture — 'How does the team handle disagreements during design reviews?'; (3) Growth — 'What learning opportunities exist for engineers here?'; (4) Challenges — 'What is the biggest technical challenge the team is facing right now?' Avoid asking about salary/benefits in early rounds.",
+    "key_points": ["always ask questions", "role clarity", "culture", "growth", "avoid salary in early rounds"],
+    "improvement_tip": "Asking insightful questions is as important as answering them — it shows genuine interest."
+  }
+]

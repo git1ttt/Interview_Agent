@@ -1,0 +1,82 @@
+[
+  {
+    "id": "DS001",
+    "role": "Data Scientist",
+    "category": "technical",
+    "difficulty": "intermediate",
+    "question": "Explain the bias-variance tradeoff.",
+    "model_answer": "Bias is the error from incorrect assumptions (underfitting — model too simple). Variance is the error from sensitivity to training data fluctuations (overfitting — model too complex). The tradeoff: reducing bias often increases variance and vice versa. Optimal models find the sweet spot. Techniques: cross-validation to detect overfitting, regularization (L1/L2) to reduce variance, ensemble methods (bagging reduces variance, boosting reduces bias).",
+    "key_points": ["bias = underfitting", "variance = overfitting", "regularization", "ensemble methods"],
+    "improvement_tip": "Draw the U-shaped total error curve — shows deep conceptual understanding."
+  },
+  {
+    "id": "DS002",
+    "role": "Data Scientist",
+    "category": "technical",
+    "difficulty": "intermediate",
+    "question": "What is the difference between supervised and unsupervised learning?",
+    "model_answer": "Supervised learning trains on labeled data (input-output pairs) to learn a mapping function. Examples: linear regression (continuous output), logistic regression / SVM / neural networks (categorical output). Unsupervised learning finds hidden patterns in unlabeled data. Examples: k-means clustering, PCA (dimensionality reduction), autoencoders. Semi-supervised and self-supervised learning sit between these paradigms.",
+    "key_points": ["labeled vs unlabeled", "regression vs classification", "clustering", "dimensionality reduction"],
+    "improvement_tip": "Mention real-world use-cases — fraud detection (supervised) vs customer segmentation (unsupervised)."
+  },
+  {
+    "id": "DS003",
+    "role": "Data Scientist",
+    "category": "technical",
+    "difficulty": "advanced",
+    "question": "How do you handle class imbalance in a classification problem?",
+    "model_answer": "Strategies: (1) Resampling — oversample minority class (SMOTE) or undersample majority; (2) Class weights — penalize misclassification of minority class more (class_weight='balanced' in sklearn); (3) Threshold tuning — lower classification threshold for minority class; (4) Evaluation metrics — use F1-score, AUC-ROC, precision-recall curve instead of accuracy; (5) Ensemble methods — BalancedRandomForest, EasyEnsemble.",
+    "key_points": ["SMOTE", "class weights", "threshold tuning", "AUC-ROC vs accuracy"],
+    "improvement_tip": "Always mention why accuracy is a misleading metric on imbalanced datasets."
+  },
+  {
+    "id": "DS004",
+    "role": "Data Scientist",
+    "category": "technical",
+    "difficulty": "intermediate",
+    "question": "Explain how gradient boosting works.",
+    "model_answer": "Gradient boosting builds an ensemble of weak learners (decision trees) sequentially. Each new tree fits the residuals (errors) of the previous ensemble. The gradient in 'gradient boosting' refers to gradient descent in function space — we minimize a loss function by adding trees that point in the direction of the negative gradient. Popular implementations: XGBoost (regularization + parallelism), LightGBM (leaf-wise growth), CatBoost (handles categoricals natively).",
+    "key_points": ["sequential ensemble", "residual fitting", "gradient descent in function space", "XGBoost/LightGBM"],
+    "improvement_tip": "Contrast with Random Forest (parallel bagging) to show you understand both approaches."
+  },
+  {
+    "id": "DS005",
+    "role": "Data Scientist",
+    "category": "technical",
+    "difficulty": "beginner",
+    "question": "What is cross-validation and why is it used?",
+    "model_answer": "Cross-validation is a model evaluation technique that partitions data into k folds, trains on k-1 folds, and validates on the remaining fold, repeating k times. It provides a robust estimate of model performance on unseen data, helps detect overfitting, and is especially valuable when data is scarce. k=5 or k=10 are standard choices. Stratified k-fold preserves class distribution in each fold.",
+    "key_points": ["k-fold", "generalization estimate", "overfitting detection", "stratified k-fold"],
+    "improvement_tip": "Mention leave-one-out CV as an extreme case and when it's appropriate."
+  },
+  {
+    "id": "DS006",
+    "role": "Data Scientist",
+    "category": "behavioral",
+    "difficulty": "intermediate",
+    "question": "Tell me about a data science project you are most proud of.",
+    "model_answer": "STAR: Situation — e-commerce churn was 35% per quarter. Task — build a predictive churn model. Action — conducted EDA, found 3 key features (login frequency, support tickets, cart abandonment), trained XGBoost with SMOTE, achieved AUC 0.89, deployed via Flask API integrated with CRM. Result — proactive retention campaign reduced churn to 22%, $1.2M revenue saved. Lesson: feature engineering matters more than model complexity.",
+    "key_points": ["quantified impact", "end-to-end pipeline", "business value", "lesson learned"],
+    "improvement_tip": "Frame the project around business outcomes, not just model metrics."
+  },
+  {
+    "id": "DS007",
+    "role": "Data Scientist",
+    "category": "technical",
+    "difficulty": "advanced",
+    "question": "What is the difference between L1 and L2 regularization?",
+    "model_answer": "L1 (Lasso): adds sum of absolute values of weights to the loss. It produces sparse models — drives some weights exactly to zero, performing feature selection. L2 (Ridge): adds sum of squared weights to loss. It shrinks weights toward zero but rarely to exactly zero — better when all features contribute. Elastic Net combines both. L1 preferred when many irrelevant features; L2 when all features are relevant with multicollinearity.",
+    "key_points": ["sparsity (L1)", "weight shrinkage (L2)", "feature selection", "Elastic Net"],
+    "improvement_tip": "Explain the geometric intuition — L1 has diamond constraint, L2 has circular constraint."
+  },
+  {
+    "id": "DS008",
+    "role": "Data Scientist",
+    "category": "hr",
+    "difficulty": "beginner",
+    "question": "How do you communicate complex data findings to non-technical stakeholders?",
+    "model_answer": "Key principles: (1) Lead with the business question and bottom-line answer, not the methodology; (2) Use visual storytelling — bar charts, trend lines over confusion matrices; (3) Avoid jargon — replace 'AUC-ROC' with 'the model correctly identifies 90% of at-risk customers'; (4) Use analogies — compare a model to a weather forecast; (5) Provide actionable recommendations, not just insights.",
+    "key_points": ["business framing", "visual storytelling", "no jargon", "actionable recommendations"],
+    "improvement_tip": "Give a real example where you translated a complex model output into a business decision."
+  }
+]

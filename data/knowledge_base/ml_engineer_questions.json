@@ -1,0 +1,82 @@
+[
+  {
+    "id": "MLE001",
+    "role": "ML Engineer",
+    "category": "technical",
+    "difficulty": "intermediate",
+    "question": "What is the difference between a data scientist and an ML engineer?",
+    "model_answer": "A data scientist focuses on extracting insights, building and experimenting with models (exploration, feature engineering, prototyping). An ML engineer operationalises those models — they focus on production systems: scalable model serving, CI/CD for ML pipelines, monitoring for data drift, infrastructure, and latency/throughput optimisation. The ML engineer owns the model after the data scientist hands it off.",
+    "key_points": ["exploration vs production", "model serving", "CI/CD for ML", "monitoring", "infrastructure"],
+    "improvement_tip": "Be specific about MLOps tools (MLflow, Kubeflow, SageMaker) to demonstrate production experience."
+  },
+  {
+    "id": "MLE002",
+    "role": "ML Engineer",
+    "category": "technical",
+    "difficulty": "advanced",
+    "question": "How would you design a real-time ML inference pipeline that handles 10,000 requests per second?",
+    "model_answer": "Key components: (1) Model serving — TorchServe, TensorFlow Serving, or Triton Inference Server with batch inference; (2) API gateway — FastAPI/gRPC behind a load balancer; (3) Caching — Redis for repeated identical inputs; (4) Async queuing — Kafka for burst buffering; (5) Horizontal scaling — Kubernetes HPA on CPU/GPU utilisation; (6) Optimisation — ONNX export, TensorRT quantisation for GPU, model pruning; (7) Monitoring — Prometheus + Grafana for latency p95/p99.",
+    "key_points": ["model server", "batch inference", "caching", "async queue", "K8s scaling", "quantisation", "monitoring"],
+    "improvement_tip": "State specific latency targets (p99 < 50ms) and discuss trade-offs between throughput and latency."
+  },
+  {
+    "id": "MLE003",
+    "role": "ML Engineer",
+    "category": "technical",
+    "difficulty": "intermediate",
+    "question": "What is model drift and how do you detect and handle it?",
+    "model_answer": "Model drift occurs when production data distribution shifts from training data, degrading model performance. Two types: (1) Data drift — input feature distribution changes (e.g. user behaviour shifts); (2) Concept drift — relationship between input and target changes. Detection: monitor feature distributions (KS test, PSI), track prediction distribution, shadow mode testing. Handling: automated retraining triggers, champion-challenger deployment, regular data refresh.",
+    "key_points": ["data drift vs concept drift", "KS test / PSI", "prediction monitoring", "automated retraining"],
+    "improvement_tip": "Mention tools like Evidently AI, Fiddler, or Arize for production drift monitoring."
+  },
+  {
+    "id": "MLE004",
+    "role": "ML Engineer",
+    "category": "technical",
+    "difficulty": "advanced",
+    "question": "Explain the difference between online learning and batch learning. When would you use each?",
+    "model_answer": "Batch learning trains on a static dataset periodically (nightly, weekly). Pros: stable, reproducible, easy to validate. Cons: slow to adapt to data changes. Online learning updates the model incrementally with each new data point or mini-batch. Pros: adapts in real-time, no retraining overhead. Cons: sensitive to noisy data, catastrophic forgetting risk. Use batch for stable domains (medical imaging). Use online for dynamic data (stock prices, fraud, recommendation systems).",
+    "key_points": ["batch: stable, periodic", "online: real-time, adaptive", "catastrophic forgetting", "use-case examples"],
+    "improvement_tip": "Mention Vowpal Wabbit or River (scikit-multiflow) as online learning frameworks."
+  },
+  {
+    "id": "MLE005",
+    "role": "ML Engineer",
+    "category": "technical",
+    "difficulty": "intermediate",
+    "question": "What is feature store and why is it important in ML systems?",
+    "model_answer": "A feature store is a centralised repository for storing, sharing, and serving ML features consistently between training and serving pipelines. It solves: (1) Training-serving skew — the same feature computation is used in both; (2) Feature reuse — teams share features across models; (3) Point-in-time correctness — no data leakage using time-travel queries; (4) Operational efficiency — pre-computed features reduce online latency. Popular feature stores: Feast, Tecton, Hopsworks, AWS SageMaker Feature Store.",
+    "key_points": ["training-serving skew", "feature reuse", "point-in-time correctness", "Feast/Tecton"],
+    "improvement_tip": "Describe a scenario where training-serving skew caused a model to underperform in production."
+  },
+  {
+    "id": "MLE006",
+    "role": "ML Engineer",
+    "category": "behavioral",
+    "difficulty": "intermediate",
+    "question": "Tell me about a time you improved model performance in production.",
+    "model_answer": "STAR: Situation — recommendation model AUC degraded from 0.87 to 0.79 over 3 months. Task — diagnose and restore performance. Action — added data drift monitoring (PSI > 0.2 alert), traced drift to new product categories not in training data, added category embeddings, retrained with 6-month rolling window, deployed with A/B test. Result — AUC restored to 0.88, CTR improved 12%. Lesson: proactive monitoring beats reactive firefighting.",
+    "key_points": ["drift detection", "root cause analysis", "retraining strategy", "A/B testing", "quantified result"],
+    "improvement_tip": "Always link model metrics back to business metrics (CTR, revenue, churn)."
+  },
+  {
+    "id": "MLE007",
+    "role": "ML Engineer",
+    "category": "technical",
+    "difficulty": "advanced",
+    "question": "How do you reduce model inference latency for a deep learning model in production?",
+    "model_answer": "Strategies: (1) Model compression — pruning (remove low-weight parameters), quantisation (FP32 → INT8 with TensorRT), knowledge distillation (train small student from large teacher); (2) Runtime optimisation — ONNX export, TensorRT, OpenVINO, TorchScript JIT compilation; (3) Batching — dynamic batching on the serving layer; (4) Hardware — GPU inference for batch, custom ASIC for edge; (5) Caching — cache embeddings for repeated inputs; (6) Async/parallel — asynchronous pre/post-processing.",
+    "key_points": ["quantisation", "knowledge distillation", "TensorRT/ONNX", "dynamic batching", "caching"],
+    "improvement_tip": "Quote actual speedups — e.g., INT8 quantisation typically gives 2–4× speed-up with <1% accuracy drop."
+  },
+  {
+    "id": "MLE008",
+    "role": "ML Engineer",
+    "category": "hr",
+    "difficulty": "intermediate",
+    "question": "How do you stay current with the rapidly evolving ML/AI landscape?",
+    "model_answer": "Structured approach: (1) Papers — arXiv (cs.LG, cs.AI), Papers With Code for SOTA tracking; (2) Communities — Hugging Face forums, ML Twitter/X, fast.ai; (3) Courses — regularly audit Coursera/DeepLearning.AI new content; (4) Implementation — reproduce 1 paper per month to build intuition; (5) Internal sharing — host team paper-reading sessions; (6) Conferences — NeurIPS, ICML, ICLR proceedings.",
+    "key_points": ["arXiv / Papers With Code", "community", "implementation", "paper-reading sessions", "conferences"],
+    "improvement_tip": "Mention a specific recent paper you implemented or found impactful — e.g. LoRA, RLHF, Mamba."
+  }
+]

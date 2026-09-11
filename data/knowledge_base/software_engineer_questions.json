@@ -1,0 +1,102 @@
+[
+  {
+    "id": "SE001",
+    "role": "Software Engineer",
+    "category": "technical",
+    "difficulty": "beginner",
+    "question": "What is the difference between a stack and a queue?",
+    "model_answer": "A stack follows LIFO (Last-In, First-Out) order — the last element pushed is the first popped. Common use-cases: function call stacks, undo operations. A queue follows FIFO (First-In, First-Out) order — the first element enqueued is the first dequeued. Common use-cases: task scheduling, BFS traversal.",
+    "key_points": ["LIFO vs FIFO", "push/pop vs enqueue/dequeue", "real-world examples"],
+    "improvement_tip": "Always anchor your answer with concrete use-cases like recursion call stacks or print queues."
+  },
+  {
+    "id": "SE002",
+    "role": "Software Engineer",
+    "category": "technical",
+    "difficulty": "intermediate",
+    "question": "Explain the concept of Big-O notation and why it matters.",
+    "model_answer": "Big-O notation describes the upper-bound worst-case time or space complexity of an algorithm as input size n grows. It abstracts away hardware differences and focuses on scalability. O(1) is constant, O(log n) is logarithmic (binary search), O(n) is linear, O(n log n) is merge sort, O(n²) is bubble sort. It matters because a correct but O(n³) solution will be unusable on large data.",
+    "key_points": ["upper-bound", "time vs space complexity", "common complexities", "scalability"],
+    "improvement_tip": "Demonstrate by comparing two solutions to the same problem with different complexities."
+  },
+  {
+    "id": "SE003",
+    "role": "Software Engineer",
+    "category": "technical",
+    "difficulty": "intermediate",
+    "question": "What is a RESTful API and what are its core principles?",
+    "model_answer": "REST (Representational State Transfer) is an architectural style for distributed hypermedia systems. Core principles: (1) Stateless — each request contains all info needed; (2) Client-Server separation; (3) Uniform Interface — consistent resource URLs, HTTP verbs; (4) Cacheable responses; (5) Layered system; (6) Code on demand (optional). HTTP verbs map to CRUD: GET=Read, POST=Create, PUT/PATCH=Update, DELETE=Remove.",
+    "key_points": ["stateless", "uniform interface", "HTTP verbs", "CRUD mapping"],
+    "improvement_tip": "Mention status codes (200, 201, 400, 401, 404, 500) — interviewers appreciate that level of detail."
+  },
+  {
+    "id": "SE004",
+    "role": "Software Engineer",
+    "category": "technical",
+    "difficulty": "advanced",
+    "question": "Explain CAP theorem in distributed systems.",
+    "model_answer": "CAP theorem states that a distributed system can guarantee at most two of three properties simultaneously: Consistency (every read receives the most recent write), Availability (every request receives a non-error response), and Partition Tolerance (system continues operating despite network partitions). Since network partitions are unavoidable in real systems, the practical trade-off is between CP (e.g., HBase, ZooKeeper) and AP (e.g., DynamoDB, Cassandra) systems.",
+    "key_points": ["Consistency", "Availability", "Partition Tolerance", "CP vs AP examples"],
+    "improvement_tip": "Name real databases for each trade-off to show practical experience."
+  },
+  {
+    "id": "SE005",
+    "role": "Software Engineer",
+    "category": "technical",
+    "difficulty": "intermediate",
+    "question": "What is the difference between synchronous and asynchronous programming?",
+    "model_answer": "In synchronous programming, tasks execute sequentially — the program blocks until each operation completes. In asynchronous programming, tasks can be initiated and the program continues without waiting, using callbacks, promises, async/await, or event loops. Async is crucial for I/O-bound tasks (network calls, file reads) to prevent thread blocking and improve throughput.",
+    "key_points": ["blocking vs non-blocking", "I/O-bound tasks", "async/await", "event loop"],
+    "improvement_tip": "Give a Node.js or Python asyncio example — practical code context impresses interviewers."
+  },
+  {
+    "id": "SE006",
+    "role": "Software Engineer",
+    "category": "behavioral",
+    "difficulty": "intermediate",
+    "question": "Tell me about a time you debugged a difficult production issue.",
+    "model_answer": "Use the STAR method. Situation: production API latency spiked to 10s under load. Task: diagnose and fix within SLA window. Action: used distributed tracing (Jaeger), isolated a slow DB query missing an index, created the index in a zero-downtime migration, deployed. Result: latency dropped to 80ms, SLA restored. Lesson: importance of observability tooling.",
+    "key_points": ["STAR format", "systematic debugging", "observability tools", "outcome + lesson"],
+    "improvement_tip": "Quantify the impact (latency, error rate, revenue saved) to make the story memorable."
+  },
+  {
+    "id": "SE007",
+    "role": "Software Engineer",
+    "category": "hr",
+    "difficulty": "beginner",
+    "question": "Why do you want to work at our company?",
+    "model_answer": "Structure: (1) Company-specific knowledge — mention a product, engineering blog post, or open-source contribution you admire; (2) Role alignment — connect it to your skills and career growth; (3) Culture fit — reference values like engineering excellence or innovation. Avoid generic answers like 'great reputation'. Specificity signals genuine interest.",
+    "key_points": ["company research", "role alignment", "culture fit", "avoid generic answers"],
+    "improvement_tip": "Mention one specific thing about the company's technology or product that genuinely excites you."
+  },
+  {
+    "id": "SE008",
+    "role": "Software Engineer",
+    "category": "technical",
+    "difficulty": "advanced",
+    "question": "How would you design a URL shortening service like bit.ly?",
+    "model_answer": "Key components: (1) API Gateway — accepts long URL, returns short code; (2) Encoding — base62 encoding of auto-incremented ID or MD5 hash truncated to 7 chars; (3) Storage — key-value store (Redis for cache, DynamoDB/MySQL for persistence); (4) Redirect service — 301 (permanent) vs 302 (temporary) redirect; (5) Scale — handle 100M daily requests with horizontal scaling, CDN for redirects; (6) Analytics — click tracking via async event queue.",
+    "key_points": ["base62 encoding", "cache + DB", "301 vs 302", "horizontal scaling", "analytics"],
+    "improvement_tip": "Draw the data flow end-to-end and discuss trade-offs like collision probability vs hash length."
+  },
+  {
+    "id": "SE009",
+    "role": "Software Engineer",
+    "category": "technical",
+    "difficulty": "beginner",
+    "question": "What are the four pillars of Object-Oriented Programming?",
+    "model_answer": "The four OOP pillars are: (1) Encapsulation — bundling data and methods, exposing only necessary interfaces; (2) Abstraction — hiding complex implementation behind simple interfaces; (3) Inheritance — child classes inherit properties and behaviors from parent classes, enabling code reuse; (4) Polymorphism — same interface, different implementations (method overriding, overloading).",
+    "key_points": ["encapsulation", "abstraction", "inheritance", "polymorphism"],
+    "improvement_tip": "Give a short code example for each pillar — it differentiates you from candidates who only recite definitions."
+  },
+  {
+    "id": "SE010",
+    "role": "Software Engineer",
+    "category": "behavioral",
+    "difficulty": "intermediate",
+    "question": "Describe a situation where you had to meet a tight deadline.",
+    "model_answer": "STAR: Situation — product launch deadline compressed from 3 weeks to 10 days. Task — complete a payment integration module. Action — broke the feature into MVP vs nice-to-have, negotiated scope with PM, parallelized work with teammate, daily standups to unblock. Result — shipped on time with core feature; deferred enhancements to next sprint. Lesson: ruthless prioritization and communication over heroics.",
+    "key_points": ["STAR format", "scope negotiation", "prioritization", "team communication"],
+    "improvement_tip": "Emphasize decisions made under pressure, not just the outcome."
+  }
+]
